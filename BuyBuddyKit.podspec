@@ -8,19 +8,20 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "BuyBuddyKit"
-  s.version      = "1.0.0"
-  s.summary      = "BuyBuddyKit is a SDK that enables your app to connect and use the buybuddy system."
-  s.description  = "BuyBuddyKit is a SDK that contains all the neccesary views and http call methods for you to connect to the BuyBuddy system and enable your customers the interface and the capabilities to use the BuyBuddy shopping experience."
-  s.homepage     = "http://buybuddy.co"
-  s.author             = { "eciftcioglu" => "emir@buybuddy.co" }
-  s.platform     = :ios, "9.0"
-  s.source       = { :git => "https://github.com/heybuybuddy/BuyBuddyKit-specs.git", :tag => s.version}
-  s.ios.deployment_target = '9.0'
-  s.ios.vendored_frameworks = 'BuyBuddyKit.framework'
-  s.license = { :type => 'Apache-2.0', :file => 'LICENSE' }
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
-
+s.name         = "BuyBuddyKit"
+s.version      = "1.0.0"
+s.summary      = "BuyBuddyKit is a SDK that enables your app to connect and use the buybuddy system."
+s.description  = "BuyBuddyKit is a SDK that contains all the neccesary views and http call methods for you to connect to the BuyBuddy system and enable your customers the interface and the capabilities to use the BuyBuddy shopping experience."
+s.homepage     = "http://buybuddy.co"
+s.author             = { "eciftcioglu" => "emir@buybuddy.co" }
+s.platform     = :ios, "9.0"
+s.source       = { :http => "https://github.com/heybuybuddy/BuyBuddyKit-specs.git", :tag => s.version}
+s.ios.deployment_target = '9.0'
+s.ios.vendored_frameworks = 'BuyBuddyKit.framework'
+s.license = { :type => 'Apache-2.0', :file => 'LICENSE' }
+s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
+s.source_files =  'BuyBuddyKit.framework/Headers/*.h'
 
 
 end
+
