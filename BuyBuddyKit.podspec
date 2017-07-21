@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://buybuddy.co"
   s.author             = { "eciftcioglu" => "emir@buybuddy.co" }
   s.platform     = :ios, "9.0"
-  s.source       = { :http => "https://github.com/heybuybuddy/BuyBuddyKit-specs.git", :tag => s.version}
+  s.source       = { :git => "https://github.com/heybuybuddy/BuyBuddyKit-specs.git", :tag => s.version}
   s.ios.deployment_target = '9.0'
   s.ios.vendored_frameworks = 'BuyBuddyKit.framework'
   s.license = { :type => 'Apache-2.0', :file => 'LICENSE' }
