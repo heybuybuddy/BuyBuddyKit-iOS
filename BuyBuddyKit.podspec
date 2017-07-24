@@ -15,10 +15,10 @@ s.description  = "BuyBuddyKit is a SDK that contains all the neccesary views and
 s.homepage     = "http://buybuddy.co"
 s.author             = { "eciftcioglu" => "emir@buybuddy.co" }
 s.platform     = :ios, "9.0"
-s.source       = { :http => "https://github.com/heybuybuddy/BuyBuddyKit-specs.git", :tag => s.version}
+s.source       = { :git => "https://github.com/heybuybuddy/BuyBuddyKit-specs.git", :tag => s.version}
 s.ios.deployment_target = '9.0'
 s.ios.vendored_frameworks = 'BuyBuddyKit.framework'
-s.license = { :type => 'Apache-2.0', :file => 'LICENSE' }
+s.license = { :type => 'MIT', :file => 'LICENSE' }
 s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
 s.source_files =  'BuyBuddyKit.framework/Headers/*.h'
 
