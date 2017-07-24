@@ -1,3 +1,5 @@
+![alt text](https://github.com/heybuybuddy/BuyBuddyKit-specs/blob/master/images/buybuddy_logo2.png)
+
 # BuyBuddyKit Framework
 
 BuyBuddyKit is a library which contains customizable views and API convenience methods for you to integrate to the BuyBuddy platform and enable your customers to utilize the interface and the capabilities of BuyBuddy shopping experience.
