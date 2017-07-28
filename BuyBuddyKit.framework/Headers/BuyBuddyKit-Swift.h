@@ -363,6 +363,10 @@ SWIFT_CLASS("_TtC11BuyBuddyKit5Hitag")
 @end
 
 
+@interface NSObject (SWIFT_EXTENSION(BuyBuddyKit))
+@end
+
+
 SWIFT_CLASS("_TtC11BuyBuddyKit13PopUpScanView")
 @interface PopUpScanView : UIView
 @property (nonatomic, strong) UIImageView * _Nonnull centerImageView;
@@ -397,10 +401,6 @@ SWIFT_CLASS("_TtC11BuyBuddyKit18ScanViewController")
 - (void)buttonWasPressed:(UIButton * _Nonnull)data;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface ScanViewController (SWIFT_EXTENSION(BuyBuddyKit))
 @end
 
 @class UITableView;
