@@ -29,7 +29,7 @@ You can install Carthage with Homebrew using the following command:
 
 To integrate BuyBuddyKit into your Xcode project using Carthage, specify it in your Cartfile:
 
-`github "heybuybuddy/BuyBuddyKit-specs" ~> 1.0.0`
+`github "heybuybuddy/BuyBuddyKit-specs" ~> 1.0.1`
 
 Run `carthage update` to build the framework and drag the built `BuyBuddyKit.framework` into your Xcode project.
 
