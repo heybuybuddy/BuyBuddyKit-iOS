@@ -44,7 +44,6 @@ CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects. It h
 
 To integrate BuyBuddyKit into your Xcode project using CocoaPods, specify it in your Podfile:
 
-platform :ios, '8.0'
 
 ```ruby
   use_frameworks!
