@@ -51,7 +51,7 @@ platform :ios, '8.0'
   
 target 'TargetName' do
 
-pod 'BuyBuddyKit', '~> 1.0.0'
+pod 'BuyBuddyKit', '~> 1.0.1'
 
 end
 ```
