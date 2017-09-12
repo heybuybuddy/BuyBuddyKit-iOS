@@ -136,8 +136,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import ObjectiveC;
 @import CoreBluetooth;
-@import Foundation;
 @import CoreLocation;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -165,77 +165,6 @@ SWIFT_CLASS("_TtC11BuyBuddyKit15ButtonWithFrame")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class BuyBuddyBLEPeripheral;
-@class CBCentralManager;
-@class CBPeripheral;
-@class NSString;
-@class NSNumber;
-
-SWIFT_CLASS("_TtC11BuyBuddyKit18BuyBuddyBLEHandler")
-@interface BuyBuddyBLEHandler : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
-@property (nonatomic, strong) BuyBuddyBLEPeripheral * _Nullable uartConnect;
-@property (nonatomic, strong) CBCentralManager * _Null_unspecified centralManager;
-@property (nonatomic, strong) CBPeripheral * _Null_unspecified currentDevice;
-@property (nonatomic) BOOL connected;
-@property (nonatomic) BOOL timeOutCheck;
-@property (nonatomic) BOOL pending;
-@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull hitagsPasswords;
-@property (nonatomic, copy) NSDictionary<NSString *, NSNumber *> * _Nonnull hitagsTried;
-@property (nonatomic, copy) NSString * _Null_unspecified currentHitag;
-@property (nonatomic, copy) NSArray<NSString *> * _Nonnull devicesToOpen;
-@property (nonatomic, copy) NSArray<NSString *> * _Nonnull openedDevices;
-@property (nonatomic, copy) NSArray<NSString *> * _Nonnull deviceWithError;
-@property (nonatomic, copy) NSString * _Nullable initHitagId;
-- (NSString * _Nullable)initHitagId SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic) NSInteger validationCode;
-@property (nonatomic, copy) NSArray<CBPeripheral *> * _Nonnull peripheralConnecting;
-@property (nonatomic) NSInteger counter;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (BOOL)sendPasswordWithPassword:(NSString * _Nonnull)password SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)disconnectFromHitag SWIFT_WARN_UNUSED_RESULT;
-- (void)decideIfNextProduct;
-- (void)connectionFinalized;
-- (void)connectionTimedOut;
-- (void)uartDidEncounterError:(NSString * _Nonnull)error;
-- (void)centralManagerDidUpdateState:(CBCentralManager * _Nonnull)central;
-- (void)centralManager:(CBCentralManager * _Nonnull)central didFailToConnectPeripheral:(CBPeripheral * _Nonnull)peripheral error:(NSError * _Nullable)error;
-- (void)centralManager:(CBCentralManager * _Nonnull)central didDisconnectPeripheral:(CBPeripheral * _Nonnull)peripheral error:(NSError * _Nullable)error;
-- (void)didReceiveData:(NSData * _Nonnull)newData;
-- (void)centralManager:(CBCentralManager * _Nonnull)central didDiscoverPeripheral:(CBPeripheral * _Nonnull)peripheral advertisementData:(NSDictionary<NSString *, id> * _Nonnull)advertisementData RSSI:(NSNumber * _Nonnull)RSSI;
-- (void)connectDevice:(CBPeripheral * _Nonnull)peripheral;
-- (void)centralManager:(CBCentralManager * _Nonnull)central didConnectPeripheral:(CBPeripheral * _Nonnull)peripheral;
-@end
-
-@class CBService;
-@class CBCharacteristic;
-@class CBUUID;
-
-SWIFT_CLASS("_TtC11BuyBuddyKit21BuyBuddyBLEPeripheral")
-@interface BuyBuddyBLEPeripheral : NSObject <CBPeripheralDelegate>
-@property (nonatomic, strong) CBPeripheral * _Null_unspecified currentPeripheral;
-@property (nonatomic, strong) CBService * _Nullable uartService;
-@property (nonatomic, strong) CBCharacteristic * _Nullable rxCharacteristic;
-@property (nonatomic, strong) CBCharacteristic * _Nullable txCharacteristic;
-@property (nonatomic, copy) NSArray<CBService *> * _Nonnull knownServices;
-- (void)writeHexString:(NSString * _Nonnull)hexString;
-- (void)writeString:(NSString * _Nonnull)string;
-- (void)writeRawData:(NSData * _Nonnull)data;
-- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverServices:(NSError * _Nullable)error;
-- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverCharacteristicsForService:(CBService * _Nonnull)service error:(NSError * _Nullable)error;
-- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverDescriptorsForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
-- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didUpdateValueForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
-- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverIncludedServicesForService:(CBService * _Nonnull)service error:(NSError * _Nullable)error;
-- (void)handleError:(NSString * _Nonnull)errorString;
-- (CBUUID * _Nonnull)hitagServiceUUID SWIFT_WARN_UNUSED_RESULT;
-- (CBUUID * _Nonnull)passCharacteristicUUID SWIFT_WARN_UNUSED_RESULT;
-- (CBUUID * _Nonnull)rxCharacteristicUUID SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)UUIDsAreEqual:(CBUUID * _Nonnull)firstID secondID:(CBUUID * _Nonnull)secondID SWIFT_WARN_UNUSED_RESULT;
-- (CBUUID * _Nonnull)softwareRevisionStringUUID SWIFT_WARN_UNUSED_RESULT;
-- (CBUUID * _Nonnull)dfuServiceUUID SWIFT_WARN_UNUSED_RESULT;
-- (CBUUID * _Nonnull)deviceInformationServiceUUID SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-@end
-
 @class UIColor;
 
 SWIFT_CLASS("_TtC11BuyBuddyKit18BuyBuddyCartButton")
@@ -251,13 +180,11 @@ SWIFT_CLASS("_TtC11BuyBuddyKit18BuyBuddyCartButton")
 @end
 
 @class CLLocationManager;
+@class CBCentralManager;
 @class NSTimer;
-@class CLRegion;
-@class CLBeacon;
-@class CLBeaconRegion;
 
 SWIFT_CLASS("_TtC11BuyBuddyKit20BuyBuddyHitagManager")
-@interface BuyBuddyHitagManager : NSObject <CLLocationManagerDelegate, CBCentralManagerDelegate>
+@interface BuyBuddyHitagManager : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) BuyBuddyHitagManager * _Null_unspecified sharedInstance;)
 + (BuyBuddyHitagManager * _Null_unspecified)sharedInstance SWIFT_WARN_UNUSED_RESULT;
 + (void)setSharedInstance:(BuyBuddyHitagManager * _Null_unspecified)value;
@@ -271,15 +198,72 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) BuyBuddyHitagManager *
 + (NSDictionary<NSString *, NSNumber *> * _Nullable)getValidNumbersWithHitagIds:(NSArray<NSString *> * _Nonnull)hitagIds SWIFT_WARN_UNUSED_RESULT;
 - (void)startRanging;
 - (void)startMonitoring;
-- (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
-- (void)locationManager:(CLLocationManager * _Nonnull)manager didEnterRegion:(CLRegion * _Nonnull)region;
-- (void)locationManager:(CLLocationManager * _Nonnull)manager didExitRegion:(CLRegion * _Nonnull)region;
-- (void)locationManager:(CLLocationManager * _Nonnull)manager didRangeBeacons:(NSArray<CLBeacon *> * _Nonnull)beacons inRegion:(CLBeaconRegion * _Nonnull)region;
 - (void)passiveHitagHandler;
+@end
+
+@class CBPeripheral;
+@class NSNumber;
+
+@interface BuyBuddyHitagManager (SWIFT_EXTENSION(BuyBuddyKit)) <CBCentralManagerDelegate>
 - (void)centralManagerDidUpdateState:(CBCentralManager * _Nonnull)central;
 - (void)centralManager:(CBCentralManager * _Nonnull)central didDiscoverPeripheral:(CBPeripheral * _Nonnull)peripheral advertisementData:(NSDictionary<NSString *, id> * _Nonnull)advertisementData RSSI:(NSNumber * _Nonnull)RSSI;
 @end
 
+@class CLRegion;
+@class CLBeacon;
+@class CLBeaconRegion;
+
+@interface BuyBuddyHitagManager (SWIFT_EXTENSION(BuyBuddyKit)) <CLLocationManagerDelegate>
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didEnterRegion:(CLRegion * _Nonnull)region;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didExitRegion:(CLRegion * _Nonnull)region;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didRangeBeacons:(NSArray<CLBeacon *> * _Nonnull)beacons inRegion:(CLBeaconRegion * _Nonnull)region;
+@end
+
+@class CBService;
+
+SWIFT_CLASS("_TtC11BuyBuddyKit28BuyBuddyHitagReleaserManager")
+@interface BuyBuddyHitagReleaserManager : NSObject <CBCentralManagerDelegate>
+@property (nonatomic, copy) NSArray<CBPeripheral *> * _Nonnull peripherals;
+@property (nonatomic, strong) CBCentralManager * _Null_unspecified centralManager;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull devicesToOpen;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull openSuccessDevices;
+@property (nonatomic, strong) CBPeripheral * _Nullable currentHitag;
+@property (nonatomic, copy) NSString * _Nullable currentHitagId;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull devicesWithFailure;
+@property (nonatomic, copy) NSDictionary<NSString *, NSNumber *> * _Nonnull deviceTryCounter;
+@property (nonatomic, copy) NSDictionary<NSNumber *, NSNumber *> * _Nonnull sessionTryCounter;
+@property (nonatomic, strong) CBService * _Nullable hitagService;
+@property (nonatomic, copy) NSArray<CBService *> * _Nonnull knownServices;
+@property (nonatomic) BOOL validationBoolean;
+@property (nonatomic) NSInteger sessionId;
+- (void)startScan;
+- (void)stopScan;
+- (void)disconnectFromDevice;
+- (void)scanTimeOutHandler;
+- (void)connectionTimeOutHandler;
+- (void)responseTimeOutHandler;
+- (void)centralManagerDidUpdateState:(CBCentralManager * _Nonnull)central;
+- (void)centralManager:(CBCentralManager * _Nonnull)central didDiscoverPeripheral:(CBPeripheral * _Nonnull)peripheral advertisementData:(NSDictionary<NSString *, id> * _Nonnull)advertisementData RSSI:(NSNumber * _Nonnull)RSSI;
+- (void)connectToHitagWithDevice:(CBPeripheral * _Nonnull)device;
+- (void)centralManager:(CBCentralManager * _Nonnull)central didConnectPeripheral:(CBPeripheral * _Nonnull)peripheral;
+- (void)centralManager:(CBCentralManager * _Nonnull)central didFailToConnectPeripheral:(CBPeripheral * _Nonnull)peripheral error:(NSError * _Nullable)error;
+- (void)centralManager:(CBCentralManager * _Nonnull)central didDisconnectPeripheral:(CBPeripheral * _Nonnull)peripheral error:(NSError * _Nullable)error;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+@class CBCharacteristic;
+@class CBUUID;
+
+@interface BuyBuddyHitagReleaserManager (SWIFT_EXTENSION(BuyBuddyKit)) <CBPeripheralDelegate>
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverServices:(NSError * _Nullable)error;
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverCharacteristicsForService:(CBService * _Nonnull)service error:(NSError * _Nullable)error;
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverDescriptorsForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didUpdateValueForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
+- (BOOL)UUIDsAreEqual:(CBUUID * _Nonnull)firstID secondID:(CBUUID * _Nonnull)secondID SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class NSString;
 
 @interface CBUUID (SWIFT_EXTENSION(BuyBuddyKit))
 - (NSString * _Nonnull)representativeString SWIFT_WARN_UNUSED_RESULT;
@@ -312,7 +296,7 @@ SWIFT_CLASS("_TtC11BuyBuddyKit15CircleImageView")
 @class NSBundle;
 
 SWIFT_CLASS("_TtC11BuyBuddyKit29FinalizePaymentViewController")
-@interface FinalizePaymentViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface FinalizePaymentViewController : UIViewController
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified paymentLabel;
 @property (nonatomic, strong) IBOutlet UIView * _Null_unspecified midView;
 @property (nonatomic, strong) IBOutlet UICollectionView * _Null_unspecified collectionView;
@@ -332,11 +316,6 @@ SWIFT_CLASS("_TtC11BuyBuddyKit29FinalizePaymentViewController")
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (IBAction)dismissPage:(id _Nonnull)sender;
-- (void)connectionTimeOutWithHitagId:(NSString * _Nonnull)hitagId;
-- (void)connectionCompleteWithHitagId:(NSString * _Nonnull)hitagId validateId:(NSInteger)validateId;
-- (void)disconnectionCompleteWithHitagId:(NSString * _Nonnull)hitagId;
-- (void)devicePasswordSentWithDataSent:(BOOL)dataSent hitagId:(NSString * _Nonnull)hitagId responseCode:(NSInteger)responseCode;
-- (void)completionCheck;
 - (void)stateChange;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -344,12 +323,16 @@ SWIFT_CLASS("_TtC11BuyBuddyKit29FinalizePaymentViewController")
 
 @class UICollectionViewLayout;
 
-@interface FinalizePaymentViewController (SWIFT_EXTENSION(BuyBuddyKit))
-- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * _Nonnull)collectionView SWIFT_WARN_UNUSED_RESULT;
+@interface FinalizePaymentViewController (SWIFT_EXTENSION(BuyBuddyKit)) <UICollectionViewDelegateFlowLayout>
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface FinalizePaymentViewController (SWIFT_EXTENSION(BuyBuddyKit)) <UICollectionViewDataSource, UICollectionViewDelegate>
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * _Nonnull)collectionView SWIFT_WARN_UNUSED_RESULT;
 - (UIEdgeInsets)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -406,7 +389,7 @@ SWIFT_CLASS("_TtC11BuyBuddyKit18ScanViewController")
 @class UITableView;
 
 SWIFT_CLASS("_TtC11BuyBuddyKit28ShoppingBasketViewController")
-@interface ShoppingBasketViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface ShoppingBasketViewController : UIViewController
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified titleText;
 @property (nonatomic, strong) IBOutlet UIView * _Null_unspecified tableViewContainer;
 @property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified paymentButton;
@@ -421,8 +404,8 @@ SWIFT_CLASS("_TtC11BuyBuddyKit28ShoppingBasketViewController")
 @property (nonatomic, copy) NSDictionary<NSString *, NSNumber *> * _Nonnull hitagValidations;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull hitagStringIds;
 - (void)viewDidLoad;
-- (void)stateChange;
 - (void)viewDidLayoutSubviews;
+- (void)stateChange;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)createTableLabel;
 - (IBAction)dismissAction:(id _Nonnull)sender;
@@ -431,19 +414,27 @@ SWIFT_CLASS("_TtC11BuyBuddyKit28ShoppingBasketViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITableViewCell;
 
-@interface ShoppingBasketViewController (SWIFT_EXTENSION(BuyBuddyKit))
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (void)tableView:(UITableView * _Nonnull)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * _Nonnull)collectionView SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+@interface ShoppingBasketViewController (SWIFT_EXTENSION(BuyBuddyKit)) <UICollectionViewDelegateFlowLayout>
+- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface ShoppingBasketViewController (SWIFT_EXTENSION(BuyBuddyKit)) <UICollectionViewDataSource, UICollectionViewDelegate>
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * _Nonnull)collectionView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class UITableViewCell;
+
+@interface ShoppingBasketViewController (SWIFT_EXTENSION(BuyBuddyKit)) <UITableViewDelegate, UITableViewDataSource>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
