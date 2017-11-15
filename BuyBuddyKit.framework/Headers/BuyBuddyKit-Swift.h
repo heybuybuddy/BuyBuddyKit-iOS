@@ -172,8 +172,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
 #endif
 #if __has_feature(modules)
-@import UIKit;
-@import CoreGraphics;
 @import ObjectiveC;
 @import CoreBluetooth;
 @import CoreLocation;
@@ -188,19 +186,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Wnullability"
 
 SWIFT_MODULE_NAMESPACE_PUSH("BuyBuddyKit")
-@class UIColor;
-@class NSCoder;
-
-SWIFT_CLASS("_TtC11BuyBuddyKit18BuyBuddyCartButton")
-@interface BuyBuddyCartButton : UIButton
-@property (nonatomic, strong) UIColor * _Nonnull badgeColor;
-- (void)awakeFromNib;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)layoutSubviews;
-- (void)buttonPressWithButton:(UIButton * _Nonnull)button;
-@end
-
 
 SWIFT_CLASS("_TtC11BuyBuddyKit20BuyBuddyHitagManager")
 @interface BuyBuddyHitagManager : NSObject
@@ -258,17 +243,6 @@ SWIFT_CLASS("_TtC11BuyBuddyKit28BuyBuddyHitagReleaserManager")
 
 SWIFT_CLASS("_TtC11BuyBuddyKit5Hitag")
 @interface Hitag : CBPeripheral
-@end
-
-
-
-
-
-
-
-
-@interface UIView (SWIFT_EXTENSION(BuyBuddyKit))
-- (void)blinkAnimate;
 @end
 
 SWIFT_MODULE_NAMESPACE_POP
