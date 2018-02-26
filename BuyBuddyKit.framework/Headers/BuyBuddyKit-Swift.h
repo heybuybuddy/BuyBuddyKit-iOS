@@ -191,7 +191,6 @@ SWIFT_MODULE_NAMESPACE_PUSH("BuyBuddyKit")
 SWIFT_CLASS("_TtC11BuyBuddyKit20BuyBuddyHitagManager")
 @interface BuyBuddyHitagManager : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (void)regionStoreMonitoring;
 - (void)passiveHitagHandler;
 @end
 
