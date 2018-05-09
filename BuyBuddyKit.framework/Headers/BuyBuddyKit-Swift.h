@@ -185,8 +185,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
-SWIFT_CLASS("_TtC11BuyBuddyKit20BuyBuddyHitagManager")
-@interface BuyBuddyHitagManager : NSObject
+SWIFT_CLASS("_TtC11BuyBuddyKit21BuyBuddyHitagListener")
+@interface BuyBuddyHitagListener : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)passiveHitagHandler;
 @end
@@ -195,7 +195,7 @@ SWIFT_CLASS("_TtC11BuyBuddyKit20BuyBuddyHitagManager")
 @class CBPeripheral;
 @class NSNumber;
 
-@interface BuyBuddyHitagManager (SWIFT_EXTENSION(BuyBuddyKit)) <CBCentralManagerDelegate>
+@interface BuyBuddyHitagListener (SWIFT_EXTENSION(BuyBuddyKit)) <CBCentralManagerDelegate>
 - (void)centralManagerDidUpdateState:(CBCentralManager * _Nonnull)central;
 - (void)centralManager:(CBCentralManager * _Nonnull)central didDiscoverPeripheral:(CBPeripheral * _Nonnull)peripheral advertisementData:(NSDictionary<NSString *, id> * _Nonnull)advertisementData RSSI:(NSNumber * _Nonnull)RSSI;
 @end
@@ -205,19 +205,20 @@ SWIFT_CLASS("_TtC11BuyBuddyKit20BuyBuddyHitagManager")
 @class CLBeacon;
 @class CLBeaconRegion;
 
-@interface BuyBuddyHitagManager (SWIFT_EXTENSION(BuyBuddyKit)) <CLLocationManagerDelegate>
+@interface BuyBuddyHitagListener (SWIFT_EXTENSION(BuyBuddyKit)) <CLLocationManagerDelegate>
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didEnterRegion:(CLRegion * _Nonnull)region;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didExitRegion:(CLRegion * _Nonnull)region;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didRangeBeacons:(NSArray<CLBeacon *> * _Nonnull)beacons inRegion:(CLBeaconRegion * _Nonnull)region;
 @end
 
+@class NSTimer;
 
 SWIFT_CLASS("_TtC11BuyBuddyKit28BuyBuddyHitagReleaserManager")
 @interface BuyBuddyHitagReleaserManager : NSObject <CBCentralManagerDelegate>
-- (void)scanTimeOutHandler;
-- (void)connectionTimeOutHandler;
-- (void)responseTimeOutHandler;
+- (void)scanTimeOutHandlerWithTimer:(NSTimer * _Nonnull)timer;
+- (void)connectionTimeOutHandlerWithTimer:(NSTimer * _Nonnull)timer;
+- (void)responseTimeOutHandlerWithTimer:(NSTimer * _Nonnull)timer;
 - (void)centralManagerDidUpdateState:(CBCentralManager * _Nonnull)central;
 - (void)centralManager:(CBCentralManager * _Nonnull)central didDiscoverPeripheral:(CBPeripheral * _Nonnull)peripheral advertisementData:(NSDictionary<NSString *, id> * _Nonnull)advertisementData RSSI:(NSNumber * _Nonnull)RSSI;
 - (void)centralManager:(CBCentralManager * _Nonnull)central didConnectPeripheral:(CBPeripheral * _Nonnull)peripheral;
@@ -230,11 +231,14 @@ SWIFT_CLASS("_TtC11BuyBuddyKit28BuyBuddyHitagReleaserManager")
 @class CBService;
 @class CBCharacteristic;
 
-@interface BuyBuddyHitagReleaserManager (SWIFT_EXTENSION(BuyBuddyKit)) <CBPeripheralDelegate>
+SWIFT_CLASS("_TtC11BuyBuddyKit25BuyBuddyPeripheralManager")
+@interface BuyBuddyPeripheralManager : NSObject <CBPeripheralDelegate>
 - (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverServices:(NSError * _Nullable)error;
 - (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverCharacteristicsForService:(CBService * _Nonnull)service error:(NSError * _Nullable)error;
 - (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverDescriptorsForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
 - (void)peripheral:(CBPeripheral * _Nonnull)peripheral didUpdateValueForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
 
