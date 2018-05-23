@@ -90,14 +90,6 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 
 The BuyBuddyKit.framework is automatically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
 
-## Required Libraries
-
-[Alamofire](https://github.com/Alamofire/Alamofire)
-
-[AlamofireImage](https://github.com/Alamofire/AlamofireImage)
-
-[ObjectMapper](https://github.com/Hearst-DD/ObjectMapper)
-
 ## Attributions
 
 See  [Attributions](../master/ATTRIBUTIONS)
