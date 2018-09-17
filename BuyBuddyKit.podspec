@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "BuyBuddyKit"
-s.version      = "1.8.0"
+s.version      = "1.8.1"
 s.summary      = "BuyBuddyKit is a SDK that enables your app to connect and use the buybuddy system."
 s.description  = "BuyBuddyKit is a SDK that contains all the neccesary views and http call methods for you to connect to the BuyBuddy system and enable your customers the interface and the capabilities to use the BuyBuddy shopping experience."
 s.homepage     = "http://buybuddy.co"
