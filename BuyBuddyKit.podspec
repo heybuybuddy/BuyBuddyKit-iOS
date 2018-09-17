@@ -19,7 +19,7 @@ s.source       = { :git => "https://github.com/heybuybuddy/BuyBuddyKit-iOS.git",
 s.ios.deployment_target = '9.0'
 s.ios.vendored_frameworks = 'BuyBuddyKit.framework'
 s.license = { :type => 'MIT', :file => 'LICENSE' }
-s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
+s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
 s.source_files =  'BuyBuddyKit.framework/Headers/*.h'
 
 
